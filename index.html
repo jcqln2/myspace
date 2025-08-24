@@ -2,28 +2,120 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>personal page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jacqueline robinson</title>
   <style>
     body {
-      font-family: 'Times New Roman', Times, serif, sans-serif;
-      background-image: url('images/languageofflowers.webp');
-      color:rgb(245, 113, 240);
-      
+      background-color: #fff0f5; /* Soft lavender pink background */
+      color: #4b0082; /* Deep indigo for text */
+      font-family: 'Georgia', serif; /* More elegant, feminine font */
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
     }
-    a:link {
-      color:rgb(245, 113, 240);
+    .terminal {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .prompt {
+      color: #ff69b4; /* Hot pink for prompt */
+    }
+    .command {
+      color: #c71585; /* Medium violet red for commands */
+    }
+    .output {
+      margin-bottom: 20px;
+    }
+    a {
+      color: #dda0dd; /* Plum for links */
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: #ffb6c1; /* Light pink on hover */
+    }
+    .header {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    .section {
+      margin: 20px 0;
+    }
+    .project {
+      margin: 10px 0;
+    }
+    input {
+      background: none;
+      border: none;
+      color: #4b0082; /* Match body text color */
+      font-family: 'Georgia', serif;
+      width: 100%;
+      outline: none;
     }
   </style>
 </head>
-  <body>
-
-    <h3>current interests</h3>
-    <ul>
-    
-      <li><a href="https://archiveofourown.org/users/ZeusFan24">creative writing</a></li>
-      <li><a href="https://github.com/jcqln2">learning software development</a></li>
-    </ul>
-
-  </body>
-
+<body>
+  <div class="terminal">
+    <div class="header">
+      <span class="prompt">$</span> whoami
+      <div class="output">Software development student based in Hamilton, Ontario, Canada.
+	<p>Expected gradtuation date: December 2027</p>
+</div>
+    </div>
+    <div class="section">
+      <span class="prompt">$</span> <span class="command">ls -l</span>
+      <div class="output">public projects on github:</div>
+      <div class="project">
+        <a href="https://github.com/jcqln2/smartcontracts">smartcontracts</a> - Keeping track of contracts created (Solidity)
+      </div>
+      <div class="project">
+        <a href="https://github.com/jcqln2/ParrotCraft">ParrotCraft</a> - Simple Java OOP demo project to simulate a pet parrot (Java)
+      </div>
+      <div class="project">
+        <a href="https://github.com/jcqln2/shapeEscape">shapeEscape</a> - Mini JavaScript game using a little bit of physics (JavaScript)
+      </div>
+      <div class="project">
+        <a href="https://github.com/jcqln2/ShapeEscapeTS">ShapeEscapeTS</a> - Game made with SVG shapes, inspired by Geometry Wars (TypeScript)
+      </div>
+      <div class="project">
+        <a href="https://github.com/jcqln2/PythonScripts">PythonScripts</a> - Random Python scripts (Python)
+      </div>
+      <div class="project">
+        <a href="https://github.com/jcqln2/RustyShapeEscape">RustyShapeEscape</a> - Shape escape game with Rust (Rust)
+      </div>
+    </div>
+    <div class="section">
+      <span class="prompt">$</span> <span class="command">contact</span>
+      <div class="output">
+        Find me on <a href="https://github.com/jcqln2">GitHub</a> or reach out via email: jacqueline dot connect @ gmail dot com
+      </div>
+    </div>
+    <div class="section">
+      <span class="prompt">$</span> <input type="text" placeholder="Type 'help' for commands..." onkeydown="handleCommand(event)">
+    </div>
+  </div>
+  <script>
+    function handleCommand(event) {
+      if (event.key === 'Enter') {
+        const input = event.target.value.trim().toLowerCase();
+        const outputDiv = document.createElement('div');
+        outputDiv.className = 'output';
+        if (input === 'help') {
+          outputDiv.textContent = 'Available commands: ls (list projects), contact (contact info), clear (clear screen)';
+        } else if (input === 'ls') {
+          outputDiv.textContent = 'smartcontracts  ParrotCraft  shapeEscape  ShapeEscapeTS  PythonScripts  RustyShapeEscape';
+        } else if (input === 'contact') {
+          outputDiv.innerHTML = 'Find me on <a href="https://github.com/jcqln2">GitHub</a> or reach out via GitHub issues.';
+        } else if (input === 'clear') {
+          document.querySelector('.terminal').innerHTML = '<div class="section"><span class="prompt">$</span> <input type="text" placeholder="Type \'help\' for commands..." onkeydown="handleCommand(event)"></div>';
+          return;
+        } else {
+          outputDiv.textContent = `Command not found: ${input}. Type 'help' for available commands.`;
+        }
+        event.target.parentElement.insertBefore(outputDiv, event.target);
+        event.target.value = '';
+      }
+    }
+  </script>
+</body>
 </html>
