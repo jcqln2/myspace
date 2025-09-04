@@ -52,6 +52,14 @@
       width: 100%;
       outline: none;
     }
+    /* Added video styling */
+    video {
+      max-width: 100%; /* Ensure video doesn't overflow container */
+      height: auto;
+      margin-top: 10px;
+      border: 2px solid #dda0dd; /* Plum border to match theme */
+      border-radius: 5px;
+    }
   </style>
 </head>
 <body>
@@ -73,15 +81,15 @@
       </div>
       <div class="project">
         <a href="https://github.com/jcqln2/shapeEscape">shapeEscape</a> - Mini JavaScript game using a little bit of physics (JavaScript)
+        <!-- Added video element -->
+        <video controls>
+          <source src="sclip.mp4" type="video/mp4">
+          Your browser does not support the video tag. Please try viewing in a modern browser or download the video <a href="sclip.mp4">here</a>.
+        </video>
       </div>
       <div class="project">
-        <a href="https://github.com/jcqln2/ShapeEscapeTS">ShapeEscapeTS</a> - Game made with SVG shapes, inspired by Geometry Wars (TypeScript)
-      </div>
-      <div class="project">
-        <a href="https://github.com/jcqln2/PythonScripts">PythonScripts</a> - Random Python scripts (Python)
-      </div>
-      <div class="project">
-        <a href="https://github.com/jcqln2/RustyShapeEscape">RustyShapeEscape</a> - Shape escape game with Rust (Rust)
+        <a href="https://activity.metamask.io/">Crypto wallet activity explainer</a>- Winner of internal company hackathon in 2022 that turned into real product
+        <img src="walletActivityScreen.png" alt="metamask activity screen" width="250" height="300">
       </div>
     </div>
     <div class="section">
