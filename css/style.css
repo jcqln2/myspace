@@ -1,0 +1,54 @@
+body {
+  background-color: #fff0f5; /* Soft lavender pink background */
+  color: #4b0082; /* Deep indigo for text */
+  font-family: 'Georgia', serif; /* More elegant, feminine font */
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+.terminal {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.prompt {
+  color: #ff69b4; /* Hot pink for prompt */
+}
+.command {
+  color: #c71585; /* Medium violet red for commands */
+}
+.output {
+  margin-bottom: 20px;
+}
+a {
+  color: #dda0dd; /* Plum for links */
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #ffb6c1; /* Light pink on hover */
+}
+.header {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+.section {
+  margin: 20px 0;
+}
+.project {
+  margin: 10px 0;
+}
+input {
+  background: none;
+  border: none;
+  color: #4b0082; /* Match body text color */
+  font-family: 'Georgia', serif;
+  width: 100%;
+  outline: none;
+}
+video {
+  max-width: 100%; /* Ensure video doesn't overflow container */
+  height: auto;
+  margin-top: 10px;
+  border: 2px solid #dda0dd; /* Plum border to match theme */
+  border-radius: 5px;
+}
