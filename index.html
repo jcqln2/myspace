@@ -3,135 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>jacqueline robinson</title>
+  <title>Jacqueline Robinson</title>
   <style>
     body {
-      background-color: #fff0f5; /* Soft lavender pink background */
-      color: #4b0082; /* Deep indigo for text */
-      font-family: 'Georgia', serif; /* More elegant, feminine font */
+      background-color: #1a1a1a; /* Dark terminal background */
+      color: #e0e0e0;
+      font-family: monospace;
       margin: 0;
       padding: 20px;
       line-height: 1.6;
     }
     .terminal {
-      max-width: 800px;
+      max-width: 850px;
       margin: 0 auto;
     }
     .prompt {
-      color: #ff69b4; /* Hot pink for prompt */
+      color: #00ff99; /* Terminal green */
     }
     .command {
-      color: #c71585; /* Medium violet red for commands */
+      color: #ff69b4; /* Hot pink for commands */
     }
     .output {
-      margin-bottom: 20px;
+      margin: 10px 0 20px 20px;
     }
     a {
-      color: #dda0dd; /* Plum for links */
+      color: #87cefa; /* Light blue links */
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
-      color: #ffb6c1; /* Light pink on hover */
     }
-    .header {
-      font-size: 1.2em;
-      margin-bottom: 20px;
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
     }
-    .section {
-      margin: 20px 0;
+    .badge {
+      background: #333;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 8px;
+      font-size: 0.85em;
     }
     .project {
-      margin: 10px 0;
+      margin: 15px 0;
     }
-    input {
-      background: none;
-      border: none;
-      color: #4b0082; /* Match body text color */
-      font-family: 'Georgia', serif;
-      width: 100%;
-      outline: none;
+    .details {
+      display: none;
+      margin-top: 5px;
+      font-size: 0.9em;
+      color: #ccc;
     }
-    /* Added video styling */
-    video {
-      max-width: 100%; /* Ensure video doesn't overflow container */
-      height: auto;
-      margin-top: 10px;
-      border: 2px solid #dda0dd; /* Plum border to match theme */
-      border-radius: 5px;
+    .project:hover .details {
+      display: block;
+    }
+    .typing {
+      border-right: 2px solid #00ff99;
+      white-space: nowrap;
+      overflow: hidden;
     }
   </style>
 </head>
 <body>
   <div class="terminal">
-    <div class="header">
-      <span class="prompt">$</span> whoami
+    <div>
+      <span class="prompt">$</span> <span class="command typing" id="whoami"></span>
       <div class="output">
-		  <p>Hi, my name is Jacqueline Robinson, I'm a Software development student</p>
-		  <p>I'm seeking a co-op placement / internship starting May 2026, of either 4 months or 8 months in length</p>p
-	<p>My GPA was 90% in my last semester and I'm currently at the beginning of year 2. </p>
-		  <p>I have past work experience testing large code bases that have been both web apps and API services</p>
-		  <p>Skills: testing, debugging, experience with testing blockchain applications, JSON RPC API serivces, ad tech and front end websites.</p>
-		  <p>Team work, writing documentation, breaking down engineering work, problem solving, paying attention to detail, collaborating with stakeholders</p>
-</div>
-    </div>
-    <div class="section">
-      <span class="prompt">$</span> <span class="command">ls -l</span>
-		<div class="output"><a href="https://www.linkedin.com/in/jacquelinerobinson2020/" alt="linkedin page" target="_blank">my linkedin page</a</div>
-      <div class="output">sample projects from my <a href="" alt="github page" target="_blank">github:</a></div>
-		
-      <div class="project">
-        <a href="https://github.com/jcqln2/smartcontracts">smartcontracts</a> - Keeping track of contracts created (Solidity)
-      </div>
-      <div class="project">
-        <a href="https://github.com/jcqln2/ParrotCraft">ParrotCraft</a> - Simple Java OOP demo project to simulate a pet parrot (Java)
-      </div>
-      <div class="project">
-        <a href="https://github.com/jcqln2/shapeEscape">shapeEscape</a> - Mini JavaScript game using a little bit of physics (JavaScript)
-        <!-- Added video element -->
-        <video controls>
-          <source src="sclip.mp4" type="video/mp4">
-          Your browser does not support the video tag. Please try viewing in a modern browser or download the video <a href="sclip.mp4">here</a>.
-        </video>
-      </div>
-      <div class="project">
-        <a href="https://activity.metamask.io/">Crypto wallet activity explainer</a>- Winner of internal company hackathon in 2022 that turned into real product
-        <img src="walletActivityScreen.png" alt="metamask activity screen" width="250" height="300">
+        <p>Hi, my name is <strong>Jacqueline Robinson</strong>, I'm a Software Development student.</p>
+        <p>I'm seeking a co-op placement / internship starting May 2026 (4 or 8 months).</p>
+        <p>GPA: <strong>90%</strong> in my last semester. Currently in Year 2.</p>
+        <p>Past experience testing large code bases (web apps + API services).</p>
       </div>
     </div>
-    <div class="section">
-      <span class="prompt">$</span> <span class="command">contact</span>
+
+    <div>
+      <span class="prompt">$</span> <span class="command typing" id="skills"></span>
+      <div class="output skills">
+        <span class="badge">Testing</span>
+        <span class="badge">Debugging</span>
+        <span class="badge">Blockchain Apps</span>
+        <span class="badge">JSON RPC APIs</span>
+        <span class="badge">Ad Tech</span>
+        <span class="badge">Frontend Dev</span>
+        <span class="badge">Documentation</span>
+        <span class="badge">Teamwork</span>
+      </div>
+    </div>
+
+    <div>
+      <span class="prompt">$</span> <span class="command typing" id="ls"></span>
       <div class="output">
-		<p><a href="mailto:jacqueline.robinson5@mohawkcollege.ca">My college email </a></p>
-        Find me on <a href="https://github.com/jcqln2">GitHub</a> or my personal non-school email: jacqueline dot connect @ gmail dot com
+        <div class="project">
+          <a href="https://github.com/jcqln2/smartcontracts">smartcontracts</a>  
+          <div class="details">Solidity | Track contract creation. Learned smart contract basics + blockchain testing.</div>
+        </div>
+        <div class="project">
+          <a href="https://github.com/jcqln2/ParrotCraft">ParrotCraft</a>  
+          <div class="details">Java | OOP pet simulation project. Focused on inheritance, polymorphism, UI interaction.</div>
+        </div>
+        <div class="project">
+          <a href="https://github.com/jcqln2/shapeEscape">shapeEscape</a>  
+          <div class="details">JavaScript | Mini physics game. Strengthened DOM manipulation + game loop concepts.</div>
+        </div>
+        <div class="project">
+          <a href="https://activity.metamask.io/">Crypto Wallet Activity</a>  
+          <div class="details">Hackathon-winning project (MetaMask, 2022) → Became real product. Focused on UX + data visualization.</div>
+        </div>
       </div>
     </div>
-    <div class="section">
-      <span class="prompt">$</span> <input type="text" placeholder="Type 'help' for commands..." onkeydown="handleCommand(event)">
+
+    <div>
+      <span class="prompt">$</span> <span class="command typing" id="contact"></span>
+      <div class="output">
+        <p><a href="mailto:jacqueline.robinson5@mohawkcollege.ca">jacqueline.robinson5@mohawkcollege.ca</a></p>
+        <p><a href="https://github.com/jcqln2">GitHub</a> | <a href="https://www.linkedin.com/in/jacquelinerobinson2020/">LinkedIn</a></p>
+      </div>
     </div>
   </div>
+
   <script>
-    function handleCommand(event) {
-      if (event.key === 'Enter') {
-        const input = event.target.value.trim().toLowerCase();
-        const outputDiv = document.createElement('div');
-        outputDiv.className = 'output';
-        if (input === 'help') {
-          outputDiv.textContent = 'Available commands: ls (list projects), contact (contact info), clear (clear screen)';
-        } else if (input === 'ls') {
-          outputDiv.textContent = 'smartcontracts  ParrotCraft  shapeEscape  ShapeEscapeTS  PythonScripts  RustyShapeEscape';
-        } else if (input === 'contact') {
-          outputDiv.innerHTML = 'Find me on <a href="https://github.com/jcqln2">GitHub</a> or reach out via GitHub issues.';
-        } else if (input === 'clear') {
-          document.querySelector('.terminal').innerHTML = '<div class="section"><span class="prompt">$</span> <input type="text" placeholder="Type \'help\' for commands..." onkeydown="handleCommand(event)"></div>';
-          return;
-        } else {
-          outputDiv.textContent = `Command not found: ${input}. Type 'help' for available commands.`;
+    const commands = {
+      whoami: "whoami",
+      skills: "cat skills.txt",
+      ls: "ls -l",
+      contact: "contact"
+    };
+
+    function typeCommand(id, text, delay = 80) {
+      let i = 0;
+      const el = document.getElementById(id);
+      function typing() {
+        if (i < text.length) {
+          el.textContent += text.charAt(i);
+          i++;
+          setTimeout(typing, delay);
         }
-        event.target.parentElement.insertBefore(outputDiv, event.target);
-        event.target.value = '';
       }
+      typing();
     }
+
+    window.onload = () => {
+      typeCommand("whoami", commands.whoami);
+      setTimeout(() => typeCommand("skills", commands.skills), 1000);
+      setTimeout(() => typeCommand("ls", commands.ls), 2000);
+      setTimeout(() => typeCommand("contact", commands.contact), 3000);
+    };
   </script>
 </body>
 </html>
